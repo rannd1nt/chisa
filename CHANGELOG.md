@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
+# Release Notes 0.3.1 - Polars Optional Dependency Hotfix
+
+This is a rapid hotfix release addressing a critical startup crash for users operating in Pandas-only environments.
+
+### Bug Fixes
+* **fix(compat):** While Polars was correctly defined as an optional dependency in `pyproject.toml`, internal engine imports were previously unguarded. We have introduced strict `HAS_POLARS` runtime flags across the compatibility and backend layers. Phaethon now boots flawlessly regardless of which backend (Pandas or Polars) is present in the host environment.
+
+---
 
 ## [0.3.0] - 2026-03-13
 

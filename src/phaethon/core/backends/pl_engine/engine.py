@@ -1,6 +1,7 @@
 from __future__ import annotations
-
-import polars as pl
+from ...compat import HAS_POLARS
+if HAS_POLARS:
+    import polars as pl
 import numpy as np
 import pandas as pd
 from typing import Any

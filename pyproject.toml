@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "phaethon"
-version = "0.3.0"
+version = "0.3.1"
 description = "Dimensional Data Pipelines & Semantic Data Transformations"
 readme = "README.md"
 requires-python = ">=3.10"

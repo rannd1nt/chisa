@@ -26,7 +26,8 @@ if not HAS_PANDAS and not HAS_POLARS:
 # THE TYPE REGISTRY
 # =========================================================================
 if TYPE_CHECKING:
-    import pandas as pd
+    if HAS_POLARS:
+        import polars as pl
     import numpy as np
     import polars as pl
     from decimal import Decimal
