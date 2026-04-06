@@ -148,17 +148,17 @@ rate = 1 / u.Second(30)
 print(rate) # 0.0333 / s (rate of 30 per second) [SI unit: 1/s]
 
 freq = u.Cycle(1) / u.Second(30)
-print(freq) # 0.0333 Hz (frequency of 30 cycles per second)
+print(freq) # 0.0333 Hz (frequency: cycle rate of 30 per second)
 
 becquerel = u.Decay(1) / u.Second(30)
-print(becquerel) # 0.0333 Bq (decay rate of 30 per second)
+print(becquerel) # 0.0333 Bq (becquerel: decay rate of 30 per second)
 ```
 
 ---
 
 ## Exclusive Domain Locks
 
-While Phantom Units protect parallel branches, highly specialized scientific domains often require an absolute quarantine. Phaethon implements **Exclusive Domain Locks** (`__exclusive_domain__ = True`) to prevent careless casting or interaction between boundaries that share mathematical foundations but imply drastically different physical behaviors.
+While Phantom Units protect parallel branches, highly specialized scientific domains often require an absolute quarantine. Phaethon implements **Exclusive Domain Locks** to prevent careless casting or interaction between boundaries that share mathematical foundations but imply drastically different physical behaviors.
 
 You cannot directly cast an entity into an Exclusive Domain; you must explicitly synthesize it via multiplication or division with the correct Phantom Unit or spatial parameter (like Radians).
 

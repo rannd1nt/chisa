@@ -25,7 +25,7 @@ keywords: "physics-constrained scientific computing, Sci-ML python framework, ph
       <a href="/">Home</a>
       <a href="https://github.com/rannd1nt/phaethon" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="https://github.com/rannd1nt/phaethon/releases" target="_blank" rel="noopener noreferrer">Release Notes</a>
-      <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer">License</a>
+      <a href="https://github.com/rannd1nt/phaethon/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">License</a>
     </div>
     
     <button class="mobile-menu-btn" aria-label="Toggle Mobile Menu">
@@ -41,7 +41,7 @@ keywords: "physics-constrained scientific computing, Sci-ML python framework, ph
     <a href="/">Home</a>
     <a href="https://github.com/rannd1nt/phaethon" target="_blank" rel="noopener noreferrer">GitHub</a>
     <a href="https://github.com/rannd1nt/phaethon/releases" target="_blank" rel="noopener noreferrer">Release Notes</a>
-    <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer">License</a>
+    <a href="https://github.com/rannd1nt/phaethon/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">License</a>
   </div>
 
   <section class="hero animate-up" aria-labelledby="hero-title">
