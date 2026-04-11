@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-wheels:
-    name: Build wheels on ${{ matrix.os }}
+    name: Build wheels on ${{ matrix.os }} (${{ matrix.target }})
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -17,8 +17,8 @@ jobs:
           # Windows x86_64
           - os: windows-latest
             target: x86_64
-          # Mac Intel
-          - os: macos-13
+          # Mac Intel (Cross-compiled from Apple Silicon)
+          - os: macos-latest
             target: x86_64
           # Mac Apple Silicon (M1/M2/M3)
           - os: macos-latest
