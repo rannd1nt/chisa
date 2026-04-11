@@ -62,6 +62,9 @@ Core Architecture
     Dependency Note:
         Requires PyTorch.
         Install via: `pip install 'phaethon[torch]'` or `pip install 'phaethon[sciml]'`
+
+- **Full Documentation:** [https://phaethon.readthedocs.io](https://phaethon.readthedocs.io)
+- **GitHub Repository:** [https://github.com/rannd1nt/phaethon](https://github.com/rannd1nt/phaethon)
 """
 
 from .core.registry import baseof, dims, unitsin, dimof
@@ -76,13 +79,12 @@ from .core import vmath
 from .core.fluent import convert
 from .core.tensor import array, asarray, asanyarray
 
-Schema.normalize
 from . import axiom
 from . import units
 from . import linalg
 from . import random
 
-__version__ = "0.4.1"
+__version__ = "0.4.2"
 
 __all__ = [
     "units",

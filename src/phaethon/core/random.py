@@ -20,6 +20,10 @@ def _resolve_unit(unit: Any) -> type[BaseUnit]:
     raise TypeError("The 'unit' argument must be a string alias or a BaseUnit class.")
 
 class RandomState:
+    def __init__(self, seed: int | None = None) -> None:
+        if HAS_NUMPY:
+            self._rng = np.random.default_rng(seed)
+
     def seed(self, seed: int | None = None) -> None:
         """
         Reseeds the isolated physics random number generator.
