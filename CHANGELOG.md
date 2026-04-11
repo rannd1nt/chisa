@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.4.2] - 2026-04-12
+
+### Hotfix: RandomState Initialization & Metadata Polish
+This is a critical hotfix release addressing an initialization failure in the newly introduced stochastic engine and polishing the package's internal documentation metadata.
+
+### Core Fixes
+* **fix(random):** Added the missing `__init__` constructor to the `RandomState` class. This resolves an `AttributeError` where the internal `_rng` generator was not instantiated if `ptn.random.seed()` was not explicitly called by the user.
+* **docs(init):** Refined the package-level docstring in `__init__.py` with rich architectural descriptions and verified hyperlinks for enterprise-grade IDE inspection.
+
 ## [0.4.1] - 2026-04-11
 
 ### Stability, Type Refinery & Stochastic Engine
