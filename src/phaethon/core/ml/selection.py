@@ -5,7 +5,8 @@ from __future__ import annotations
 from typing import Any
 
 from ..base import BaseUnit
-from ..compat import HAS_NUMPY, HAS_SKLEARN, DataFrameLike
+from ..compat import HAS_NUMPY, HAS_SKLEARN
+from ..._typing import DataFrameLike
 
 if HAS_SKLEARN:
     import numpy as np

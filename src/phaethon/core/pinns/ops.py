@@ -12,7 +12,7 @@ from .tensor import PTensor
 if TYPE_CHECKING:
     import torch
     import torch.fft as tfft
-    from ..compat import _UnitT_co 
+    from ..._typing import _UnitT_co 
 elif HAS_TORCH:
     import torch
     import torch.fft as tfft

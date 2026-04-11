@@ -8,11 +8,10 @@ from typing import (
 
 from .registry import ureg
 from .dataset import Dataset
-from .compat import (
-    DataFrameLike, is_pandas_df, is_polars_df, _DataFrameT, ErrorAction, InterpolationMethod,
-    UnitLike, ColumnTarget, AliasRegistry, ContextDict, ImputeMethod, StrictnessLevel,
-    NumericLike, _UnitT_co, GradTarget, TensorLikeTuple, HAS_RAPIDFUZZ,
-    require_torch
+from .compat import is_pandas_df, is_polars_df, HAS_RAPIDFUZZ, require_torch
+from .._typing import (
+    DataFrameLike, _DataFrameT, ErrorAction, InterpolationMethod, UnitLike, ColumnTarget, AliasRegistry,
+    ImputeMethod, StrictnessLevel, NumericLike, _UnitT_co, GradTarget, TensorLikeTuple, ContextDict
 )
 
 if TYPE_CHECKING:

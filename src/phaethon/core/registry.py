@@ -3,7 +3,7 @@ from __future__ import annotations
 import math
 from typing import TYPE_CHECKING, overload, Literal
 from ..exceptions import UnitNotFoundError, DimensionMismatchError, AmbiguousUnitError
-from .compat import UnitLike, _Signature, _UnitT
+from .._typing import UnitLike, _Signature
 
 if TYPE_CHECKING:
     from .base import BaseUnit

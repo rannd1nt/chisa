@@ -1,11 +1,11 @@
 from __future__ import annotations
 
 from math import log10, floor
-from typing import Literal, Any, overload, Generic
+from typing import Literal, Any, overload, Generic, TYPE_CHECKING
 
 from ..exceptions import ConversionError, AmbiguousUnitError, UnitNotFoundError
 from .registry import UnitRegistry, ureg
-from .compat import UnitLike, ConvertibleInput, _ReturnT, ContextDict, NumericLike, NumDtype, TYPE_CHECKING
+from .._typing import UnitLike, ConvertibleInput, _ReturnT, ContextDict, NumericLike, NumDtype
 
 try:
     from .base import BaseUnit

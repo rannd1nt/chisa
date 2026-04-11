@@ -5,7 +5,8 @@ Provides physics-aware wrappers around NumPy's core array creation routines.
 from __future__ import annotations
 
 from typing import Any, overload
-from .compat import UnitLike, HAS_NUMPY, _UnitT
+from .compat import HAS_NUMPY
+from .._typing import UnitLike, _UnitT
 from .registry import ureg
 from .base import BaseUnit
 

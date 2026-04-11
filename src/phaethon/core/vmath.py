@@ -11,7 +11,7 @@ import math as std_math
 import builtins
 from typing import Any
 
-from .compat import NumericLike, _NumericT
+from .._typing import NumericLike, _NumericT
 
 try:
     import numpy as np

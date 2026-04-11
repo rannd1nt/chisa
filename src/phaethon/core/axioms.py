@@ -17,7 +17,7 @@ if TYPE_CHECKING:
     class SupportsContextEvaluation(Protocol):
         def __call__(self, context: ContextDict) -> NumericLike: ...
 
-from .compat import _UnitClassT, _CallableT, NumericLike, ContextDict
+from .._typing import _UnitClassT, _CallableT, NumericLike, ContextDict
 from ..exceptions import AxiomViolationError, DimensionMismatchError
 
 try:

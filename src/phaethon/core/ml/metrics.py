@@ -3,7 +3,7 @@ Physics-Aware Evaluation Metrics for Scikit-Learn.
 """
 from __future__ import annotations
 from typing import Any, Literal, overload
-from ..compat import NumericLike, _UnitT
+from ..._typing import NumericLike, _UnitT
 
 from ...exceptions import PhysicalAlgebraError
 from ..base import BaseUnit

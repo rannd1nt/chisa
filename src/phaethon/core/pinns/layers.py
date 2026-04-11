@@ -11,7 +11,7 @@ if TYPE_CHECKING:
     import torch
     import torch.nn as nn
     from .ops import fft, ifft
-    from ..compat import _UnitT_co
+    from ..._typing import _UnitT_co
     _BaseModule = nn.Module
 elif HAS_TORCH:
     import torch
