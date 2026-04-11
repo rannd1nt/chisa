@@ -11,7 +11,7 @@ from ..compat import HAS_NUMPY, HAS_SKLEARN
 if TYPE_CHECKING:
     import numpy as np
     from typing_extensions import Self
-    from ..compat import _EstimatorT, _UnitT, DataFrameLike, NumericLike, ConvertibleInput
+    from ..._typing import _EstimatorT, _UnitT, DataFrameLike, NumericLike, ConvertibleInput
 else:
     _EstimatorT = TypeVar("_EstimatorT")
     _UnitT = TypeVar("_UnitT")

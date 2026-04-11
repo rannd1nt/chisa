@@ -186,12 +186,27 @@ print(mag_v)
 
 ## Stochastic Physics (`phaethon.random`)
 
-Generates highly-optimized stochastic tensors that are instantly bounded by physical dimensions.
+Generates highly-optimized stochastic tensors that are instantly bounded by physical dimensions. Phaethon utilizes an isolated `RandomState` engine under the hood, ensuring that stochastic physics simulations remain completely reproducible without contaminating the global NumPy environment.
 
 !!! warning "Axiom Bounds & Stochastic Generation"
     Because `phaethon.random` functions automatically instantiate new `BaseUnit` tensors under the hood, generating stochastic values that violate the target unit's physical boundaries (e.g., generating negative `Kelvin` or `Mass`) will immediately trigger an `AxiomViolationError` under the `default` axiom strictness level. 
     
     To prevent unexpected crashes in your simulations, ensure your distribution parameters (`low`, `loc`, `scale`) remain within physically valid ranges, or temporarily adjust the axiom's strictness level using [`phaethon.using()`](config.md) or [`phaethon.config()`](config.md).
+
+### phaethon.random.seed
+
+Reseeds the isolated physics random number generator. Crucial for ensuring absolute reproducibility in stochastic physical models, thermodynamic simulations, or machine learning cross-validations.
+
+**Arguments:**
+
+<div class="param-box">
+  <div class="param-header">
+    <span class="p-name">seed</span>
+    <span class="p-sep">—</span>
+    <span class="p-type">int | None</span>
+  </div>
+  <div class="p-desc">An integer to initialize the internal BitGenerator. If None, fresh entropy is drawn from the OS.</div>
+</div>
 
 ### phaethon.random.uniform / normal
 
@@ -230,6 +245,9 @@ Draws samples from continuous distributions (Uniform or Gaussian) and injects ph
 
 ```python
 import phaethon as ptn
+
+# Ensure reproducibility
+ptn.random.seed(42)
 
 # Uniform: Generate a 3x3 matrix of random pressures (10.5 to 20.5 Pascal)
 pressures = ptn.random.uniform(low=10.5, high=20.5, size=(3, 3), unit='Pa')
@@ -300,15 +318,79 @@ Draws samples from an exponential distribution. Ideal for simulating the time be
   <div class="p-desc">The physical dimension to attach (typically 's' or u.Second).</div>
 </div>
 
+### phaethon.random.randint / choice
+
+Draws from discrete probability distributions. `randint` generates uniformly distributed integers, while `choice` generates a random sample from a predefined 1-D array of allowed physical states.
+
+**Arguments:**
+
+<div class="param-box">
+  <div class="param-header">
+    <span class="p-name">low, high (randint) / a (choice)</span>
+    <span class="p-sep">—</span>
+    <span class="p-type">int | ArrayLike</span>
+  </div>
+  <div class="p-desc">Integer bounds, or the 1-D array of allowed magnitudes to sample from.</div>
+</div>
+
+<div class="param-box">
+  <div class="param-header">
+    <span class="p-name">size</span>
+    <span class="p-sep">—</span>
+    <span class="p-type">Any</span>
+  </div>
+  <div class="p-desc">Output array shape.</div>
+</div>
+
+<div class="param-box">
+  <div class="param-header">
+    <span class="p-name">unit</span>
+    <span class="p-sep">—</span>
+    <span class="p-type">str | type[BaseUnit]</span>
+  </div>
+  <div class="p-desc">The physical dimension to attach.</div>
+</div>
+
 **Example Usage:**
 
 ```python
 import phaethon as ptn
 import phaethon.units as u
 
-# Simulating time between particle arrivals (average 1.5 seconds)
-arrival_times = ptn.random.exponential(scale=1.5, size=(3,), unit=u.Second)
+# Generate quantized discrete energy levels (-1, 0, or 1 eV)
+energy_levels = ptn.random.randint(-1, 2, size=5, unit=u.Electronvolt)
 
-print(arrival_times.dimension)
-# Output: 'time'
+# Monte Carlo: Select a random speed from allowed discrete states
+allowed_speeds = [300.0, 400.0, 500.0]
+particles = ptn.random.choice(allowed_speeds, size=10, unit=u.MeterPerSecond)
+```
+
+### phaethon.random.shuffle / permutation
+
+Modifies sequence order. `shuffle` modifies a physical tensor sequence in-place along the first axis. `permutation` randomly permutes a tensor and returns a completely new copy (out-of-place).
+
+**Arguments:**
+
+<div class="param-box">
+  <div class="param-header">
+    <span class="p-name">x</span>
+    <span class="p-sep">—</span>
+    <span class="p-type">BaseUnit | int</span>
+  </div>
+  <div class="p-desc">The physical tensor to shuffle/permute. If an integer is passed to permutation, it returns a dimensionless permuted range.</div>
+</div>
+
+**Example Usage:**
+
+```python
+import phaethon as ptn
+import phaethon.units as u
+
+velocity_array = ptn.array([10.0, 20.0, 30.0], unit=u.MeterPerSecond)
+
+# Mutates the array directly in memory
+ptn.random.shuffle(velocity_array)
+
+# Creates a new array with randomized elements
+new_tensor = ptn.random.permutation(velocity_array)
 ```

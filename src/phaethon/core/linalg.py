@@ -3,9 +3,10 @@ Phaethon Linear Algebra Module.
 Physics-aware wrappers around numpy.linalg operations.
 """
 from __future__ import annotations
-from typing import Any, overload
+from typing import Any
 
-from .compat import HAS_NUMPY, _UnitT
+from .compat import HAS_NUMPY
+from .._typing import _UnitT
 from .base import BaseUnit
 
 if HAS_NUMPY:

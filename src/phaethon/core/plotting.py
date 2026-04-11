@@ -8,7 +8,8 @@ from __future__ import annotations
 from typing import Any, TYPE_CHECKING, overload, Mapping
 import numpy as np
 
-from .compat import HAS_NUMPY, _KeyT, Extractable, UnwrappedArray
+from .compat import HAS_NUMPY
+from .._typing import _KeyT, Extractable, UnwrappedArray
 
 if TYPE_CHECKING:
     from .base import BaseUnit
@@ -17,7 +18,8 @@ if TYPE_CHECKING:
 from collections.abc import Mapping
 from typing import Any, TYPE_CHECKING, overload
 
-from .compat import HAS_NUMPY, _KeyT, Extractable, UnwrappedArray
+from .compat import HAS_NUMPY
+from .._typing import _KeyT, Extractable, UnwrappedArray
 
 if TYPE_CHECKING:
     from .base import BaseUnit

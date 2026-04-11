@@ -11,7 +11,7 @@ from ..compat import HAS_NUMPY, HAS_SKLEARN
 if TYPE_CHECKING:
     import numpy as np
     from typing_extensions import Self
-    from ..compat import _InvTransformerT, DataFrameLike, NumericLike
+    from ..._typing import _InvTransformerT, DataFrameLike, NumericLike
 else:
     _InvTransformerT = TypeVar("_InvTransformerT")
     Self = Any

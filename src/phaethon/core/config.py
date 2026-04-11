@@ -4,7 +4,7 @@ import sys
 from contextvars import ContextVar
 from contextlib import contextmanager
 from typing import Any, Generator
-from .compat import ContextDict, AliasRegistry, ErrorAction, StrictnessLevel
+from .._typing import ContextDict, AliasRegistry, ErrorAction, StrictnessLevel
 
 _GLB = "__phaethon_global__"
 _CTX = "__phaethon_context__"
