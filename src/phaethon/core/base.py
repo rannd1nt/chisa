@@ -8,7 +8,7 @@ from typing import Any, TYPE_CHECKING, overload
 from .registry import ureg
 from .config import get_config, using
 from ..exceptions import DimensionMismatchError, PhysicalAlgebraError
-from .compat import _UnitT, ContextDict, NumericLike, UnitLike
+from .._typing import _UnitT, ContextDict, NumericLike, UnitLike
 
 if TYPE_CHECKING:
     import numpy as np

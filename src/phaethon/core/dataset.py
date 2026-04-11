@@ -12,7 +12,7 @@ import warnings
 import inspect
 from typing import Any, Mapping, Iterator, TYPE_CHECKING, overload
 
-from .compat import HAS_NUMPY, HAS_TORCH
+from .._typing import HAS_NUMPY, HAS_TORCH
 from .base import BaseUnit, _find_existing_class
 from .registry import ureg
 
@@ -20,7 +20,7 @@ if HAS_NUMPY:
     import numpy as np
 
 if TYPE_CHECKING:
-    from .compat import DatasetInput, TensorLikeDict
+    from .._typing import DatasetInput, TensorLikeDict
     if HAS_TORCH:
         import torch
         from .pinns.tensor import PTensor

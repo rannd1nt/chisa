@@ -7,7 +7,7 @@ from typing import Any, TYPE_CHECKING
 
 if TYPE_CHECKING:
     from .base import BaseUnit
-    from .compat import ContextDict, NumericLike
+    from .._typing import ContextDict, NumericLike
 
 from ..exceptions import DimensionMismatchError
 from .compat import HAS_RAPIDFUZZ

@@ -19,7 +19,7 @@ from .compat import (
 )
 
 if TYPE_CHECKING:
-    from .compat import DataFrameLike, _ParquetConfig, _HDF5Config
+    from .._typing import DataFrameLike, _ParquetConfig, _HDF5Config
     from typing import Unpack
     from .dataset import Dataset
 

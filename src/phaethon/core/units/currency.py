@@ -12,7 +12,7 @@ through the USD anchor automatically.
 from ..base import BaseUnit
 from .. import axioms as _axiom
 from ..axioms import CtxProxy
-from ..compat import ContextDict
+from ..._typing import ContextDict
 
 def fx_rate(symbol: str, default: float) -> CtxProxy:
     """

@@ -4,7 +4,8 @@ PhaethonTensor: The Physics-Aware PyTorch Tensor.
 from __future__ import annotations
 from typing import Any, Callable, TYPE_CHECKING, Generic, overload
 
-from ..compat import HAS_TORCH, _UnitT_co, NumericLike, _UnitT
+from ..compat import HAS_TORCH
+from ..._typing import _UnitT_co, NumericLike, _UnitT
 from ..registry import ureg
 from ..base import BaseUnit
 from ...exceptions import DimensionMismatchError
