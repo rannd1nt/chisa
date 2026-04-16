@@ -105,8 +105,8 @@
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD"
-        }{% endif %}{% if seo_t == 'TechArticle' and page.meta.git_revision_date_localized is defined %},
-        "dateModified": "{{ page.meta.git_revision_date_localized }}"{% endif %}
+        }{% endif %}{% if seo_t == 'TechArticle' and page.meta.git_revision_date_localized_raw_iso_date is defined %},
+        "dateModified": "{{ page.meta.git_revision_date_localized_raw_iso_date }}"{% endif %}
       }
     ]
   }
