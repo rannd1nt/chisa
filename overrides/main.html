@@ -61,15 +61,15 @@
             {% set pos = namespace(value=2) %}
             {% if page.ancestors %}
               {% for nav_item in page.ancestors %}
+                {% if nav_item.url %}
                 ,{
                   "@type": "ListItem",
                   "position": {{ pos.value }},
-                  "name": "{{ nav_item.title }}"
-                  {%- if nav_item.url %},
+                  "name": "{{ nav_item.title }}",
                   "item": "{{ config.site_url | trim('/') }}/{{ nav_item.url }}"
-                  {%- endif %}
                 }
                 {% set pos.value = pos.value + 1 %}
+                {% endif %}
               {% endfor %}
             {% endif %}
             ,{
