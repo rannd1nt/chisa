@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://phaethon.readthedocs.io/sitemap.xml
+Sitemap: https://phaethon.readthedocs.io/en/latest/sitemap.xml
