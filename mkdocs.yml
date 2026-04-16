@@ -1,6 +1,6 @@
 site_name: Phaethon
 site_description: "Physics-Constrained Scientific Computing & Sci-ML"
-site_url: https://phaethon.readthedocs.io
+site_url: https://phaethon.readthedocs.io/en/latest
 
 theme:
   name: material
